@@ -1,0 +1,161 @@
+@font-face {
+    font-family: "Raleway";
+    src: url("../fonts/Raleway-Light.ttf");
+}
+body{
+    background: #ecf0f1;
+    color: #757575;
+    font-family: "Raleway" !important;
+    font-size: 13px;
+    -webkit-user-select: none;
+}
+.mt-100{
+    margin-top: 20%;
+}
+nav.menu{
+    background: rgba(0,0,0,0.8);
+    left: 0;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+nav.menu .logo{
+    float: left;
+}
+nav.menu .logo a{
+    color: #aeaeae;
+    display: block;
+    font-size: 18px;
+    padding: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+nav.menu .right{
+    float: right;
+}
+nav.menu .right a{
+    color: #aeaeae;
+    font-size: 14px;
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+}
+.search-form{
+    background: transparent;
+    border: 0;
+    color: #aeaeae;
+    outline: none;
+    padding: 5px;
+}
+#home{
+    background: url("../img/books.jpg");
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+#home .title{
+     color: white;
+     font-size: 60px;
+     text-align: center;
+     text-transform: uppercase;
+ }
+#featured{
+    height: 100vh;
+    width: 100%;
+}
+.box{
+    padding-bottom: 50px;
+    padding-top: 80px;
+}
+.box .title{
+    font-size: 25px;
+    margin: 35px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.high{
+    font-size: 20px;!important;
+}
+.book{
+    cursor: pointer;
+    overflow: hidden;
+    display:inline;
+}
+#all{
+    height: 100vh;
+    padding-top: 2px;
+    width: 100%;
+}
+.inner-book{
+    background: rgba(0,0,0,0.8);
+    bottom: 0;
+    left: 15px;
+    padding: 20px;
+    position: absolute;
+    text-align: center;
+    width: 87%;
+}
+.inner-book a{
+    color: #fff;
+}
+.inner-book a:hover{
+    text-decoration: none;
+}
+#book{
+    background: #ecf0f1;
+    height: 100%;
+    left: -100%;
+    position: fixed;
+    top: 70px;
+    transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
+    width: 100%;
+}
+#book .close{
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 30px;
+}
+#book .close i{
+    font-size: 20px;
+}
+.right ul li{
+    list-style: none;
+    display: inline-block;
+}
+.nav{
+    margin-top: 5px !important;
+}
+.nav a{
+    background: transparent !important;
+}
+
+.nav a:hover{
+    color: #ffffff !important;
+}
+.dropdown-menu{
+    background: rgba(0,0,0,0.8)!important;
+    margin-top: 15px !important;
+}
+hr{
+    border-color: #dddddd;
+    margin-top: -10px !important;
+}
+.libro{
+    border:1px solid black;
+    margin:10px 10px;
+}
+#contLibro{
+    margin-top: 10px;
+}
+.nombreLibro {
+
+}
+.separacion {
+    margin: 0 0 30px 0;
+}
