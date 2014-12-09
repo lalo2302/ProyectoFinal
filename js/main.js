@@ -1,6 +1,8 @@
 ﻿//Lista de libros
 var ListaDeLibros;
 
+
+
 //Llamar a todos los libros
 function ObtenerLibroscallback(msg) {
     var Libros = JSON.parse(msg);
@@ -107,6 +109,7 @@ $(document).ready(function () {
         }
 
     });
+    
     
 
 });
