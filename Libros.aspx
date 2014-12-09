@@ -99,14 +99,6 @@
                         </li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle scroll" data-toggle="dropdown">
-                        Géneros
-                    </a>
-                    <ul class="dropdown-menu" role="menu" id="listaGeneros">
-                        
-                    </ul>
-                </li>
             </ul>
             <a id="show-search">
                 <input id="cuadroBusqueda" type="text" class="search-form" placeholder="Buscar"/>
