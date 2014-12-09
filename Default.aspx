@@ -83,20 +83,26 @@
                     </div>
                 </div>
                 <div class="col-sm-10 col-sm-offset-1">
-                    <div class="col-sm-4 text-center">
-                        <img src="img/r1.jpg" WIDTH="100%" alt=""/>
-                        <h4 class="high">Taken</h4>
-                        <span>Un bato</span>
+                    <div class="col-sm-4 text-center rec" id="24">
+                        <a href="Libros.aspx">
+                        <img src="covers/451.jpg" WIDTH="100%"/>
+                        <h4 class="high">Fahrenheit 451 - Ray Bradbury</h4>
+                        <span>Carlos Rodriguez</span>
+                        </a>
                     </div>
-                    <div class="col-sm-4 text-center prueba">
-                        <img src="img/r2.png" WIDTH="100%" alt=""/>
-                        <a><h4 class="high">Hunger Games</h4></a>
-                        <span>Un bato</span>
+                    <div class="col-sm-4 text-center rec" id="5">
+                        <a href="Libros.aspx">
+                        <img src="covers/gatsby.jpg" WIDTH="100%"/>
+                        <h4 class="high">The Great Gatsby - F. Scott Fitzgerald</h4>
+                        <span>Jorge Vázquez Mellado</span>
+                        </a>
                     </div>
-                    <div class="col-sm-4 text-center">
-                        <img src="img/r3.jpg" WIDTH="100%" alt=""/>
-                        <h4 class="high">Twilight</h4>
-                        <span>Un bato</span>
+                    <div class="col-sm-4 text-center rec" id="7">
+                        <a href="Libros.aspx">
+                        <img src="covers/efectoFacebook.jpg" WIDTH="100%"/>
+                        <h4 class="high">El Efecto Facebook - David Kirkpatrick</h4>
+                        <span>Eduardo Aguilera</span>
+                        </a>
                     </div>
                 </div>
             </div>

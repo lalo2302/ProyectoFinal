@@ -6,12 +6,13 @@ function ObtenerLibroscallback(msg) {
     var Libros = JSON.parse(msg);
     ListaDeLibros = Libros;
     var Generos = ["Todos"];
+    var link_libro ="a href='Libros.aspx'"
     for (var i = 0; i < ListaDeLibros.length; i++) {
         // append de los libros
-        $(".all").append('<div class="col-sm-3 separacion cuadroLibro ' + ListaDeLibros[i].genero + '" id="' + ListaDeLibros[i].idLibro + '">\n<div class="book">\n<a href="Libros.aspx"><img src="'
-                        + ListaDeLibros[i].portada + '" width="100%" height="300px" class="image"/></a>\n<div class="inner-book">\n<a class="nombreLibro">'
-                        + ListaDeLibros[i].nombreLibro + '</a><br />\n<a class="autorLibro">'
-                        + ListaDeLibros[i].autorLibro + '</a><br />\n<a class="autorEnsayo">'
+        $(".all").append('<div class="col-sm-3 separacion cuadroLibro ' + ListaDeLibros[i].genero + '" id="' + ListaDeLibros[i].idLibro + '">\n<div class="book">\n<' + link_libro + '><img src="'
+                        + ListaDeLibros[i].portada + '" width="100%" height="300px" class="image"/></a>\n<div class="inner-book">\n<' + link_libro + 'class="nombreLibro">'
+                        + ListaDeLibros[i].nombreLibro + '</a><br />\n<' + link_libro + ' class="autorLibro">'
+                        + ListaDeLibros[i].autorLibro + '</a><br />\n<' + link_libro + 'class="autorEnsayo">'
                         + ListaDeLibros[i].autorEnsayo + '</a>\n</div>\n</div>\n</div>');
         //Insertar generos a array
         var Repite = false;
@@ -89,6 +90,11 @@ $(document).ready(function () {
 
     //Ingresar cual libro va a ser llamado
     $(document).on("click", ".cuadroLibro", function () {
+        var idLibroIn = ($(this).attr("id"));
+        localStorage.setItem("idLibroOut", idLibroIn)
+
+    });
+    $(document).on("click", ".rec", function () {
         var idLibroIn = ($(this).attr("id"));
         localStorage.setItem("idLibroOut", idLibroIn)
 
