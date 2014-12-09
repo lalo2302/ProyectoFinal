@@ -23,7 +23,7 @@
                     $(".sinopsis").append("<b>Sinopsis:</b><br>" + Libro.Sinopsis);
                     $(".autorensayo").append("<h2>" + Libro.AutorEnsayo + "<h2>");
                     $(".ensayo").append("<b>Ensayo:</b><br>" + Libro.Ensayo);
-                    $(".topleft").append('<div class="cover" id="' + Libro.IDLibro + '"><img src="' + Libro.Portada + '" width="100%" onclick="ObtenerComentarios()"/></div>')
+                    $(".topleft").append('<div class="cover" id="' + Libro.IDLibro + '"><img src="' + Libro.Portada + '" width="100%"/></div>')
             };
 
             function SetLibro() {
@@ -63,9 +63,26 @@
                     "Com": com,
                 };
                 MiWebService.GuardarComentario(JSON.stringify(Comentario));
+                location.reload();
             }
-            //alert(new Date($.now()));
         };
+
+        function buscar() {
+            var busqueda = $("#cuadroBusqueda").val();
+            localStorage.setItem("busqueda", busqueda);
+            window.location.href = "http://localhost/ProyectoFinal/Busqueda.aspx";
+            return false;
+        }
+
+        function processKey(e) {
+            if (null == e)
+                e = window.event;
+            if (e.keyCode == 13) {
+                buscar();
+                return false;
+            }
+        }
+
     </script>
 </head>
 
@@ -99,17 +116,10 @@
                         </li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle scroll" data-toggle="dropdown">
-                        Géneros
-                    </a>
-                    <ul class="dropdown-menu" role="menu" id="listaGeneros">
-                        
-                    </ul>
-                </li>
             </ul>
             <a id="show-search">
-                <input id="cuadroBusqueda" type="text" class="search-form" placeholder="Buscar"/>
+                <input type="text" id="cuadroBusqueda" class="search-form" placeholder="Buscar" onkeydown="return processKey(event)"/>
+                <input type="submit" value="Save Earth" style="display: none"/>
                 <i class="ion-search"></i>
             </a>
         </div>
@@ -119,7 +129,7 @@
             <div class="col-sm-4">
                     <div class="left">
                         <div class="comments">
-                            <button onclick="GuardarComentario()">Enviar</button>
+                            <input type="button" id="comment_button" onclick="GuardarComentario()" value="Enviar" />
                             <textarea name="textarea" placeholder="INGRESAR COMENTARIO."></textarea>
                         </div>
                         <div class="topleft">
@@ -159,7 +169,7 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     </form>
 </body>
 </html>
