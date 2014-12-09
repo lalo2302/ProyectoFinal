@@ -98,7 +98,7 @@ hr{
     z-index: 54;
     opacity: 0.4;
 }
-button:hover{
+#comment_button:hover{
     opacity: 1;
 }
 textarea{
