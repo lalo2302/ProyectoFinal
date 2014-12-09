@@ -64,9 +64,6 @@
                 };
                 MiWebService.GuardarComentario(JSON.stringify(Comentario));
             }
-            else {
-                alert("No se ingresó ningún comentario.");
-            };
             //alert(new Date($.now()));
         };
     </script>
