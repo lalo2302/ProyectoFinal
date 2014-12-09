@@ -113,7 +113,7 @@
                 </li>
             </ul>
             <a id="show-search">
-                <input type="text" class="search-form" placeholder="Buscar"/>
+                <input id="cuadroBusqueda" type="text" class="search-form" placeholder="Buscar"/>
                 <i class="ion-search"></i>
             </a>
         </div>
