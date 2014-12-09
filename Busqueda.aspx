@@ -18,11 +18,7 @@
                 MiWebService.BuscarLibro(buscando, ObtenerLibroscallback);
             }
             BuscarLibro();
-            
-
-
         });
-           
         
     </script>
 </head>
