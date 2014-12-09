@@ -75,7 +75,17 @@ $(document).ready(function () {
         
 
     });
+    //busqueda
+    $("#cuadroBusqueda").keypress(function (event) {
+        var enter = event.keyCode || event.which;
+        var busqueda = $("#cuadroBusqueda").val();
+        if (enter == 13) {
+            localStorage.setItem("busqueda", busqueda);
+            window.location.href = "http://localhost/ProyectoFinal/Busqueda.aspx";
+            return false
+        }
 
+    });
     //Ingresar cual libro va a ser llamado
     $(document).on("click", ".cuadroLibro", function () {
         var idLibroIn = ($(this).attr("id"));
@@ -85,6 +95,7 @@ $(document).ready(function () {
     $(document).on("click", ".rec", function () {
         var idLibroIn = ($(this).attr("id"));
         localStorage.setItem("idLibroOut", idLibroIn)
+
 
     });
 });
