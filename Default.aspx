@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Haquers - Proyecto Final</title>
+    <link rel="shortcut icon" href="img/faviconBlanco.ico"/>
     <link rel="stylesheet" href="css/css.css"/>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/ionicons.min.css"/>

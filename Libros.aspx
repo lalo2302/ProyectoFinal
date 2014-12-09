@@ -5,7 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>Haquers - Proyecto Final - Libro</title>
-    <link rel="stylesheet" href="css/bookcss.css"/>
+    <link rel="shortcut icon" href="img/faviconBlanco.ico"/>
+    <link href="css/bookcss.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/ionicons.min.css"/>
     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
