@@ -9,10 +9,24 @@
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/ionicons.min.css"/>
     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="test.js"></script>
+    <script type="text/javascript" src="main.js"></script>
     <script>
         $(document).ready(function () {
+            function callbackSetLibro(msg) {
+                var Libro = msg;
+                    $(".titulo").append("<h1>" + Libro.Titulo + "</h1>");
+                    $(".autor").append("<h2>" + Libro.Autor + "</h2>");
+                    $(".editorial").append("<h4>" + Libro.Editorial + "</h4>");
+                    $(".genero").append("<h4>" + Libro.Genero + "</h4>");
+                    $(".public").append("<h4 >" + Libro.Publicacion + "</h4>");
+                    $(".sinopsis").append("<b>Sinopsis:</b><br>" + Libro.Sinopsis);
+                    $(".autorensayo").append("<h2>" + Libro.AutorEnsayo + "<h2>");
+                    $(".ensayo").append("<b>Ensayo:</b><br>" + Libro.Ensayo);
+                    $(".topleft").append('<div class="cover" id="' + Libro.IDLibro + '"><img src="' + Libro.Portada + '" width="100%" onclick="ObtenerComentarios()"/></div>')
+            };
+
             function SetLibro() {
+                alert("1");
                 var idLibro_set = localStorage.getItem("idLibroOut");
                 MiWebService.SetLibro(idLibro_set, callbackSetLibro);
             };
@@ -30,12 +44,13 @@
             };
         };
 
-            function ObtenerComentarios() {
-                var idLibro_comentario = "1";
-                MiWebService.ObtenerComentarios(idLibro_comentario, callbackObtenerComentarios);
-            };
+        function ObtenerComentarios() {
+            alert("2");
+            var idLibro_comentario = $(".cover").attr("id");
+            MiWebService.ObtenerComentarios(idLibro_comentario, callbackObtenerComentarios);
+        };
         
-            ObtenerComentarios();
+        ObtenerComentarios();
 
         });
 
