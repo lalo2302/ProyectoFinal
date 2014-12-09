@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/ionicons.min.css"/>
     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="test.js"></script>
     <script>
         $(document).ready(function () {
             function callbackSetLibro(msg) {
@@ -19,19 +19,36 @@
                 $(".editorial").append("<h4>" + Libro.Editorial + "</h4>");
                 $(".genero").append("<h4>" + Libro.Genero + "</h4>");
                 $(".public").append("<h4 >" + Libro.Publicacion + "</h4>");
-                $(".sinopsis").append(Libro.Sinopsis);
+                $(".sinopsis").append("<b>Sinopsis:</b><br>" + Libro.Sinopsis);
                 $(".autorensayo").append("<h2>" + Libro.AutorEnsayo + "<h2>");
-                $(".ensayo").append(Libro.Ensayo);
-                $(".topleft").append('<div class="cover" id="' + Libro.IDLibro + '"><img src="' + Libro.Portada + '" width="100%" /></div>')
+                $(".ensayo").append("<b>Ensayo:</b><br>" + Libro.Ensayo);
+                $(".topleft").append('<div class="cover" id="' + Libro.IDLibro + '"><img src="' + Libro.Portada + '" width="100%"/></div>')
             };
 
             function SetLibro() {
                 var idLibro_set = localStorage.getItem("idLibroOut");
                 MiWebService.SetLibro(idLibro_set, callbackSetLibro);
             };
-
+            
             SetLibro();
+            
 
+        });
+
+        $(document).ready(function () {
+        function callbackObtenerComentarios(msgb) {
+            var coms = JSON.parse(msgb);
+            for (var i = 0; i < coms.length; i++) {
+                $(".com_sec").append("<div class='mostrar_comentarios'>" + coms[i].Com + "</div>")
+            };
+        };
+
+            function ObtenerComentarios() {
+                var idLibro_comentario = "1";
+                MiWebService.ObtenerComentarios(idLibro_comentario, callbackObtenerComentarios);
+            };
+        
+            ObtenerComentarios();
 
         });
 
@@ -49,6 +66,7 @@
             else {
                 alert("No se ingresó ningún comentario.");
             };
+            //alert(new Date($.now()));
         };
     </script>
 </head>
@@ -135,6 +153,10 @@
                 </div>
                 <div class="ensayo">
 
+                </div>
+                <br />
+                <b>Comentarios:</b>
+                <div class="com_sec">
                 </div>
             </div>
         </div>

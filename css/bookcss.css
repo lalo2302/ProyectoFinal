@@ -82,29 +82,29 @@ hr{
 .content{
     margin-top: 73px;
 }
-#cover{
+.cover{
     position: fixed;
     width: 400px;
     z-index: 20;
 }
-.col-sm-8{
-    margin-top: 50px;
+.contenido{
+    text-align: justify;
+    text-justify: inter-word;
 }
-
 button {
     position: fixed;
     bottom: 0;
     left: 360px;
     z-index: 54;
-    opacity: 0.2;
+    opacity: 0.4;
 }
 button:hover{
-    opacity: 0.5;
+    opacity: 1;
 }
 textarea{
     background: rgba(0,0,0,0.5);
     border: 1px solid #ccc;
-    height:75px;
+    height:64px;
     position: fixed;
     bottom: 0;
     width: 400px;
@@ -112,4 +112,15 @@ textarea{
 }
 textarea:focus{
     color: #fff;
+}
+.mostrar_comentarios{
+    position: relative; 
+    height: 80px; 
+    width: 100%; 
+    padding-top: 10px;
+    padding-left: 10px; 
+    background-color: #F9F9F9;
+    border-top: 14px solid #FFD116; 
+    overflow: auto;
+    margin-bottom: 5px;
 }
