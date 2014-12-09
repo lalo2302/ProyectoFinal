@@ -91,7 +91,7 @@ hr{
     text-align: justify;
     text-justify: inter-word;
 }
-button {
+#comment_button {
     position: fixed;
     bottom: 0;
     left: 360px;

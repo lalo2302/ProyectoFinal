@@ -20,14 +20,14 @@
             function callbackSetLibro(msg) {
                 var Libro = msg;
                 $(".compra").append("<a href='" + Libro.Compra + "' target='_blank'><img src='img/amazon.png' width='20%'></a>");
-                $(".titulo").append("<h1>" + Libro.Titulo + "</h1>");
-                $(".autor").append("<h2>" + Libro.Autor + "</h2>");
-                $(".editorial").append("<h4>" + Libro.Editorial + "</h4>");
-                $(".genero").append("<h4>" + Libro.Genero + "</h4>");
-                $(".public").append("<h4 >" + Libro.Publicacion + "</h4>");
-                $(".sinopsis").append("<b>Sinopsis:</b><br>" + Libro.Sinopsis);
-                $(".autorensayo").append("<h2>" + Libro.AutorEnsayo + "<h2>");
-                $(".ensayo").append("<b>Ensayo:</b><br>" + Libro.Ensayo);
+                    $(".titulo").append("<h1>" + Libro.Titulo + "</h1>");
+                    $(".autor").append("<h2>" + Libro.Autor + "</h2>");
+                    $(".editorial").append("<h4>" + Libro.Editorial + "</h4>");
+                    $(".genero").append("<h4>" + Libro.Genero + "</h4>");
+                    $(".public").append("<h4 >" + Libro.Publicacion + "</h4>");
+                    $(".sinopsis").append("<b>Sinopsis:</b><br>" + Libro.Sinopsis);
+                    $(".autorensayo").append("<h2>" + Libro.AutorEnsayo + "<h2>");
+                    $(".ensayo").append("<b>Ensayo:</b><br>" + Libro.Ensayo);
                 $(".topleft").append('<div class="cover" id="' + Libro.IDLibro + '"><img src="' + Libro.Portada + '" width="100%"/></div>')
             };
 
@@ -35,19 +35,19 @@
                 var idLibro_set = localStorage.getItem("idLibroOut");
                 MiWebService.SetLibro(idLibro_set, callbackSetLibro);
             };
-
+            
             SetLibro();
-            function callbackObtenerComentarios(msgb) {
-                var coms = JSON.parse(msgb);
-                for (var i = 0; i < coms.length; i++) {
-                    $(".com_sec").append("<div class='mostrar_comentarios'>" + coms[i].Com + "</div>")
-                };
+        function callbackObtenerComentarios(msgb) {
+            var coms = JSON.parse(msgb);
+            for (var i = 0; i < coms.length; i++) {
+                $(".com_sec").append("<div class='mostrar_comentarios'>" + coms[i].Com + "</div>")
             };
+        };
 
-            function ObtenerComentarios() {
-                var idLibro_comentario = $(".cover").attr("id");
-                MiWebService.ObtenerComentarios(idLibro_comentario, callbackObtenerComentarios);
-            };
+        function ObtenerComentarios() {
+            var idLibro_comentario = $(".cover").attr("id");
+            MiWebService.ObtenerComentarios(idLibro_comentario, callbackObtenerComentarios);
+        };
         
             setTimeout(ObtenerComentarios, 100);
 
@@ -63,9 +63,26 @@
                     "Com": com,
                 };
                 MiWebService.GuardarComentario(JSON.stringify(Comentario));
+                location.reload();
             }
-            //alert(new Date($.now()));
         };
+
+        function buscar() {
+            var busqueda = $("#cuadroBusqueda").val();
+            localStorage.setItem("busqueda", busqueda);
+            window.location.href = "http://localhost/ProyectoFinal/Busqueda.aspx";
+            return false;
+        }
+
+        function processKey(e) {
+            if (null == e)
+                e = window.event;
+            if (e.keyCode == 13) {
+                buscar();
+                return false;
+            }
+        }
+
     </script>
 </head>
 
@@ -101,7 +118,8 @@
                 </li>
             </ul>
             <a id="show-search">
-                <input id="cuadroBusqueda" type="text" class="search-form" placeholder="Buscar"/>
+                <input type="text" id="cuadroBusqueda" class="search-form" placeholder="Buscar" onkeydown="return processKey(event)"/>
+                <input type="submit" value="Save Earth" style="display: none"/>
                 <i class="ion-search"></i>
             </a>
         </div>
@@ -111,7 +129,7 @@
             <div class="col-sm-4">
                     <div class="left">
                         <div class="comments">
-                            <button onclick="GuardarComentario();">Enviar</button>
+                            <input type="button" id="comment_button" onclick="GuardarComentario()" value="Enviar" />
                             <textarea name="textarea" placeholder="INGRESAR COMENTARIO."></textarea>
                         </div>
                         <div class="topleft">

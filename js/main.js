@@ -1,8 +1,6 @@
 ﻿//Lista de libros
 var ListaDeLibros;
 
-
-
 //Llamar a todos los libros
 function ObtenerLibroscallback(msg) {
     var Libros = JSON.parse(msg);
@@ -89,27 +87,4 @@ $(document).ready(function () {
         localStorage.setItem("idLibroOut", idLibroIn)
 
     });
-
-    //Busqueda
-    //$("#cuadroBusqueda").keypress(function (event) {
-    //    var enter = event.keyCode || event.which;
-    //    if (enter == 13) {
-    //        prueba();
-    //    }
-        
-    //});
-
-    $("#cuadroBusqueda").keypress(function (event) {
-        var enter = event.keyCode || event.which;
-        var busqueda = $("#cuadroBusqueda").val();
-        if (enter == 13) {
-            localStorage.setItem("busqueda", busqueda);
-            window.location.href = "http://localhost/ProyectoFinal/Busqueda.aspx";
-            return false
-        }
-
-    });
-    
-    
-
 });
