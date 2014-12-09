@@ -7,14 +7,19 @@
     <title>Haquers - Proyecto Final - Libro</title>
     <link rel="shortcut icon" href="img/faviconBlanco.ico"/>
     <link href="css/bookcss.css" rel="stylesheet" />
+    <link href="css/comentarios.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/ionicons.min.css"/>
     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="main.js"></script>
     <script>
+   
+        //Cargar comentarios
         $(document).ready(function () {
+
             function callbackSetLibro(msg) {
                 var Libro = msg;
+                $(".compra").append("<a href='" + Libro.Compra + "' target='_blank'><img src='img/amazon.png' width='20%'></a>");
                     $(".titulo").append("<h1>" + Libro.Titulo + "</h1>");
                     $(".autor").append("<h2>" + Libro.Autor + "</h2>");
                     $(".editorial").append("<h4>" + Libro.Editorial + "</h4>");
@@ -23,7 +28,7 @@
                     $(".sinopsis").append("<b>Sinopsis:</b><br>" + Libro.Sinopsis);
                     $(".autorensayo").append("<h2>" + Libro.AutorEnsayo + "<h2>");
                     $(".ensayo").append("<b>Ensayo:</b><br>" + Libro.Ensayo);
-                    $(".topleft").append('<div class="cover" id="' + Libro.IDLibro + '"><img src="' + Libro.Portada + '" width="100%"/></div>')
+                $(".topleft").append('<div class="cover" id="' + Libro.IDLibro + '"><img src="' + Libro.Portada + '" width="100%"/></div>')
             };
 
             function SetLibro() {
@@ -32,11 +37,6 @@
             };
             
             SetLibro();
-            
-
-        });
-        //Cargar comentarios
-        $(document).ready(function () {
         function callbackObtenerComentarios(msgb) {
             var coms = JSON.parse(msgb);
             for (var i = 0; i < coms.length; i++) {
@@ -49,7 +49,7 @@
             MiWebService.ObtenerComentarios(idLibro_comentario, callbackObtenerComentarios);
         };
         
-        setTimeout(ObtenerComentarios, 100)
+            setTimeout(ObtenerComentarios, 100);
 
         });
 
@@ -140,6 +140,9 @@
             <div class="col-sm-8 contenido">
                 <div class="titulo">
                 
+                </div>
+                <div class="compra">
+
                 </div>
                 <div class="autor">
                 

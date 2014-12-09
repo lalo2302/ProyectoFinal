@@ -1,0 +1,17 @@
+﻿.mostrar_comentarios{
+    position: relative; 
+    height: 80px; 
+    width: 100%; 
+    padding-top: 10px;
+    padding-left: 10px; 
+    background-color: #F9F9F9;
+    border-top: 14px solid #FFD116; 
+    overflow: auto;
+    margin-bottom: 5px;
+}
+
+.cover{
+    position: fixed;
+    width: 400px;
+    z-index: 20;
+}

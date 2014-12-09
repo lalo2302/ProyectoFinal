@@ -82,11 +82,11 @@ hr{
 .content{
     margin-top: 73px;
 }
-.cover{
+/*.cover{
     position: fixed;
     width: 400px;
     z-index: 20;
-}
+}*/
 .contenido{
     text-align: justify;
     text-justify: inter-word;
@@ -113,7 +113,7 @@ textarea{
 textarea:focus{
     color: #fff;
 }
-.mostrar_comentarios{
+/*.mostrar_comentarios{
     position: relative; 
     height: 80px; 
     width: 100%; 
@@ -123,4 +123,4 @@ textarea:focus{
     border-top: 14px solid #FFD116; 
     overflow: auto;
     margin-bottom: 5px;
-}
+}*/
