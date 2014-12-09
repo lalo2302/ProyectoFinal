@@ -26,7 +26,6 @@
             };
 
             function SetLibro() {
-                alert("1");
                 var idLibro_set = localStorage.getItem("idLibroOut");
                 MiWebService.SetLibro(idLibro_set, callbackSetLibro);
             };
@@ -45,12 +44,11 @@
         };
 
         function ObtenerComentarios() {
-            alert("2");
             var idLibro_comentario = $(".cover").attr("id");
             MiWebService.ObtenerComentarios(idLibro_comentario, callbackObtenerComentarios);
         };
         
-        ObtenerComentarios();
+        setTimeout(ObtenerComentarios, 100);
 
         });
 
