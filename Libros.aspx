@@ -12,19 +12,6 @@
     <script type="text/javascript" src="test.js"></script>
     <script>
         $(document).ready(function () {
-            function callbackSetLibro(msg) {
-                var Libro = msg;
-                $(".titulo").append("<h1>" + Libro.Titulo + "</h1>");
-                $(".autor").append("<h2>" + Libro.Autor + "</h2>");
-                $(".editorial").append("<h4>" + Libro.Editorial + "</h4>");
-                $(".genero").append("<h4>" + Libro.Genero + "</h4>");
-                $(".public").append("<h4 >" + Libro.Publicacion + "</h4>");
-                $(".sinopsis").append("<b>Sinopsis:</b><br>" + Libro.Sinopsis);
-                $(".autorensayo").append("<h2>" + Libro.AutorEnsayo + "<h2>");
-                $(".ensayo").append("<b>Ensayo:</b><br>" + Libro.Ensayo);
-                $(".topleft").append('<div class="cover" id="' + Libro.IDLibro + '"><img src="' + Libro.Portada + '" width="100%"/></div>')
-            };
-
             function SetLibro() {
                 var idLibro_set = localStorage.getItem("idLibroOut");
                 MiWebService.SetLibro(idLibro_set, callbackSetLibro);
