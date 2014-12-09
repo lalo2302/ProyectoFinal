@@ -22,17 +22,34 @@
                 $(".sinopsis").append(Libro.Sinopsis);
                 $(".autorensayo").append("<h2>" + Libro.AutorEnsayo + "<h2>");
                 $(".ensayo").append(Libro.Ensayo);
-                $("#cover").append('<img src="' + Libro.Portada + '" width="100%"/>')
+                $(".topleft").append('<div class="cover" id="' + Libro.IDLibro + '"><img src="' + Libro.Portada + '" width="100%" /></div>')
             };
 
             function SetLibro() {
                 var idLibro_set = localStorage.getItem("idLibroOut");
                 MiWebService.SetLibro(idLibro_set, callbackSetLibro);
             };
+
             SetLibro();
 
 
         });
+
+        //Guardar Comentario
+        function GuardarComentario() {
+            var com = $.trim($("textarea").val());
+            var idL = $(".cover").attr("id");
+            if (com != "") {
+                var Comentario = {
+                    "idLibro": idL,
+                    "Com": com,
+                };
+                MiWebService.GuardarComentario(JSON.stringify(Comentario));
+            }
+            else {
+                alert("No se ingresó ningún comentario.");
+            };
+        };
     </script>
 </head>
 
@@ -86,10 +103,10 @@
             <div class="col-sm-4">
                     <div class="left">
                         <div class="comments">
-                            <button>Enviar</button>
-                            <textarea placeholder="INGRESAR COMENTARIO."></textarea>
+                            <button onclick="GuardarComentario()">Enviar</button>
+                            <textarea name="textarea" placeholder="INGRESAR COMENTARIO."></textarea>
                         </div>
-                        <div id="cover">
+                        <div class="topleft">
                         
                         </div>
                     </div>
