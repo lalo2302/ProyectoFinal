@@ -10,6 +10,13 @@
     <link rel="stylesheet" href="css/ionicons.min.css"/>
     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script>
+        $(document).ready(function () {
+            function BuscarLibros() {
+
+            }
+        });
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -52,13 +59,26 @@
                 </li>
             </ul>
             <a id="show-search">
-                <input type="text" class="search-form" placeholder="Buscar"/>
+                <input id="cuadroBusqueda" type="text" class="search-form" placeholder="Buscar"/>
                 <i class="ion-search"></i>
             </a>
         </div>
     </nav>
+
+    <div id="resultados">
+        <div class="container box">
+            <div class="col-sm-12">
+                <div class="title">
+                    Resultados de su búsqueda
+                </div>
+            </div>
+
+            <div class="col-sm-10 col-sm-offset-1 all">
+            </div>
+        </div>
     </div>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
+    </div>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     </form>
 </body>
 </html>

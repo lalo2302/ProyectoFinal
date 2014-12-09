@@ -100,7 +100,14 @@ $(document).ready(function () {
 
     });
 
-    //Quick Search
+    //Busqueda
+    $("#cuadroBusqueda").keypress(function (event) {
+        var enter = event.keyCode || event.which;
+        if (enter == 13) {
+            alert("funciona");
+        }
+        
+    });
 
     
     

@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Haquers - Proyecto Final - Libro</title>
+    <title>Haquers - Proyecto Final</title>
     <link rel="stylesheet" href="css/bookcss.css"/>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/ionicons.min.css"/>
@@ -30,8 +30,6 @@
                 MiWebService.SetLibro(idLibro_set, callbackSetLibro);
             };
             SetLibro();
-
-
         });
     </script>
 </head>
@@ -76,7 +74,7 @@
                 </li>
             </ul>
             <a id="show-search">
-                <input type="text" class="search-form" placeholder="Buscar"/>
+                <input id="cuadroBusqueda" type="text" class="search-form" placeholder="Buscar"/>
                 <i class="ion-search"></i>
             </a>
         </div>
@@ -122,7 +120,7 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     </form>
 </body>
 </html>
