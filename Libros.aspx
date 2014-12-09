@@ -6,18 +6,31 @@
 <head runat="server">
     <title>Haquers - Proyecto Final - Libro</title>
     <link rel="stylesheet" href="css/bookcss.css"/>
-    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/ionicons.min.css"/>
     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script>
         $(document).ready(function () {
+            function callbackSetLibro(msg) {
+                var Libro = msg;
+                $(".titulo").append("<h1>" + Libro.Titulo + "</h1>");
+                $(".autor").append("<h2>" + Libro.Autor + "</h2>");
+                $(".editorial").append("<h4>" + Libro.Editorial + "</h4>");
+                $(".genero").append("<h4>" + Libro.Genero + "</h4>");
+                $(".public").append("<h4 >" + Libro.Publicacion + "</h4>");
+                $(".sinopsis").append(Libro.Sinopsis);
+                $(".autorensayo").append("<h2>" + Libro.AutorEnsayo + "<h2>");
+                $(".ensayo").append(Libro.Ensayo);
+                $("#cover").append('<img src="' + Libro.Portada + '" width="100%"/>')
+            };
 
             function SetLibro() {
                 var idLibro_set = localStorage.getItem("idLibroOut");
                 MiWebService.SetLibro(idLibro_set, callbackSetLibro);
             };
             SetLibro();
+
 
         });
     </script>

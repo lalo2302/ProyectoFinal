@@ -17,12 +17,6 @@
                 MiWebService.ObtenerLibros(ObtenerLibroscallback);
             };
             ObtenerLibros();
-
-            //function prueba() {
-            //    var cualLibro = "Prueba exitosa";
-            //    localStorage.setItem("cualLibro", cualLibro);
-            //}
-            //prueba();
         });
         
     </script>
@@ -67,7 +61,7 @@
                 </li>
             </ul>
             <a id="show-search">
-                <input type="text" class="search-form" placeholder="Buscar"/>
+                <input id="search" type="text" class="search-form" placeholder="Buscar"/>
                 <i class="ion-search"></i>
             </a>
         </div>
@@ -128,7 +122,6 @@
 
     </div>        
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        
     </form>
 
 </body>
