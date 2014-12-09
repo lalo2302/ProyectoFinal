@@ -19,7 +19,7 @@
 
             function callbackSetLibro(msg) {
                 var Libro = msg;
-                $(".compra").append("<a href='" + Libro.Compra + "'><img src='img/amazon.png' width='80%'></a>");
+                $(".compra").append("<a href='" + Libro.Compra + "' target='_blank'><img src='img/amazon.png' width='20%'></a>");
                 $(".titulo").append("<h1>" + Libro.Titulo + "</h1>");
                 $(".autor").append("<h2>" + Libro.Autor + "</h2>");
                 $(".editorial").append("<h4>" + Libro.Editorial + "</h4>");
