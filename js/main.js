@@ -37,7 +37,6 @@ function ObtenerLibroscallback(msg) {
 //Insertar libro llamado desde webservice
 
 
-
 $(document).ready(function () {
     //smooth scroll
     $(".scroll").click(function (event) {
