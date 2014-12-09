@@ -12,10 +12,18 @@
     <script type="text/javascript" src="js/main.js"></script>
     <script>
         $(document).ready(function () {
-            function BuscarLibros() {
-
+           
+            function BuscarLibro() {
+                var buscando = localStorage.getItem("busqueda");
+                MiWebService.BuscarLibro(buscando, ObtenerLibroscallback);
             }
+            BuscarLibro();
+            
+
+
         });
+           
+        
     </script>
 </head>
 <body>

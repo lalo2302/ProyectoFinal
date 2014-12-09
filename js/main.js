@@ -1,6 +1,19 @@
 ﻿//Lista de libros
 var ListaDeLibros;
 
+function callbackSetLibro(msg) {
+    var Libro = msg;
+    $(".titulo").append("<h1>" + Libro.Titulo + "</h1>");
+    $(".autor").append("<h2>" + Libro.Autor + "</h2>");
+    $(".editorial").append("<h4>" + Libro.Editorial + "</h4>");
+    $(".genero").append("<h4>" + Libro.Genero + "</h4>");
+    $(".public").append("<h4 >" + Libro.Publicacion + "</h4>");
+    $(".sinopsis").append(Libro.Sinopsis);
+    $(".autorensayo").append("<h2>" + Libro.AutorEnsayo + "<h2>");
+    $(".ensayo").append(Libro.Ensayo);
+    $("#cover").append('<img src="' + Libro.Portada + '" width="100%"/>')
+};
+
 //Llamar a todos los libros
 function ObtenerLibroscallback(msg) {
     var Libros = JSON.parse(msg);
@@ -101,15 +114,24 @@ $(document).ready(function () {
     });
 
     //Busqueda
+    //$("#cuadroBusqueda").keypress(function (event) {
+    //    var enter = event.keyCode || event.which;
+    //    if (enter == 13) {
+    //        prueba();
+    //    }
+        
+    //});
+
     $("#cuadroBusqueda").keypress(function (event) {
         var enter = event.keyCode || event.which;
+        var busqueda = $("#cuadroBusqueda").val();
         if (enter == 13) {
-            alert("funciona");
+            localStorage.setItem("busqueda", busqueda);
+            window.location.href = "http://localhost/ProyectoFinal/Busqueda.aspx";
+            return false
         }
-        
-    });
 
-    
+    });
     
 
 });
