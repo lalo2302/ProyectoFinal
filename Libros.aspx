@@ -4,20 +4,72 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Haquers - Proyecto Final</title>
+    <title>Haquers - Proyecto Final - Libro</title>
     <link rel="stylesheet" href="css/bookcss.css"/>
     <link rel="stylesheet" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/ionicons.min.css"/>
     <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="main.js"></script>
     <script>
         $(document).ready(function () {
+            function callbackSetLibro(msg) {
+                var Libro = msg;
+                    $(".titulo").append("<h1>" + Libro.Titulo + "</h1>");
+                    $(".autor").append("<h2>" + Libro.Autor + "</h2>");
+                    $(".editorial").append("<h4>" + Libro.Editorial + "</h4>");
+                    $(".genero").append("<h4>" + Libro.Genero + "</h4>");
+                    $(".public").append("<h4 >" + Libro.Publicacion + "</h4>");
+                    $(".sinopsis").append("<b>Sinopsis:</b><br>" + Libro.Sinopsis);
+                    $(".autorensayo").append("<h2>" + Libro.AutorEnsayo + "<h2>");
+                    $(".ensayo").append("<b>Ensayo:</b><br>" + Libro.Ensayo);
+                    $(".topleft").append('<div class="cover" id="' + Libro.IDLibro + '"><img src="' + Libro.Portada + '" width="100%" onclick="ObtenerComentarios()"/></div>')
+            };
+
             function SetLibro() {
+                alert("1");
                 var idLibro_set = localStorage.getItem("idLibroOut");
                 MiWebService.SetLibro(idLibro_set, callbackSetLibro);
             };
+            
             SetLibro();
+            
+
         });
+
+        $(document).ready(function () {
+        function callbackObtenerComentarios(msgb) {
+            var coms = JSON.parse(msgb);
+            for (var i = 0; i < coms.length; i++) {
+                $(".com_sec").append("<div class='mostrar_comentarios'>" + coms[i].Com + "</div>")
+            };
+        };
+
+        function ObtenerComentarios() {
+            alert("2");
+            var idLibro_comentario = $(".cover").attr("id");
+            MiWebService.ObtenerComentarios(idLibro_comentario, callbackObtenerComentarios);
+        };
+        
+        ObtenerComentarios();
+
+        });
+
+        //Guardar Comentario
+        function GuardarComentario() {
+            var com = $.trim($("textarea").val());
+            var idL = $(".cover").attr("id");
+            if (com != "") {
+                var Comentario = {
+                    "idLibro": idL,
+                    "Com": com,
+                };
+                MiWebService.GuardarComentario(JSON.stringify(Comentario));
+            }
+            else {
+                alert("No se ingresó ningún comentario.");
+            };
+            //alert(new Date($.now()));
+        };
     </script>
 </head>
 
@@ -71,10 +123,10 @@
             <div class="col-sm-4">
                     <div class="left">
                         <div class="comments">
-                            <button>Enviar</button>
-                            <textarea placeholder="INGRESAR COMENTARIO."></textarea>
+                            <button onclick="GuardarComentario()">Enviar</button>
+                            <textarea name="textarea" placeholder="INGRESAR COMENTARIO."></textarea>
                         </div>
-                        <div id="cover">
+                        <div class="topleft">
                         
                         </div>
                     </div>
@@ -104,10 +156,14 @@
                 <div class="ensayo">
 
                 </div>
+                <br />
+                <b>Comentarios:</b>
+                <div class="com_sec">
+                </div>
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
     </form>
 </body>
 </html>
