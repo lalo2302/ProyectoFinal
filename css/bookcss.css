@@ -82,6 +82,7 @@ nav.menu .right a {
 
 .nav a:hover {
     color: #ffffff !important;
+    cursor:pointer;
 }
 
 .dropdown-menu {
