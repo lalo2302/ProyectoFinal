@@ -71,7 +71,7 @@
         <div id="home">
             <div class="col-sm-6 col-sm-offset-3 mt-100">
                 <div class="title">
-                    "Para que tomar y manejar, si puedes leer y volar"
+                    "God is in the code, and the code is in the books"
                 </div>
             </div>
         </div>
