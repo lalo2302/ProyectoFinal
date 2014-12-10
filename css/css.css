@@ -138,6 +138,7 @@ nav.menu .right a{
 
 .nav a:hover{
     color: #ffffff !important;
+    cursor:pointer;
 }
 .dropdown-menu{
     background: rgba(0,0,0,0.8)!important;
