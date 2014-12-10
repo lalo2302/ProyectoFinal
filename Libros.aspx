@@ -37,6 +37,7 @@
             };
             
             SetLibro();
+
         function callbackObtenerComentarios(msgb) {
             var coms = JSON.parse(msgb);
             for (var i = 0; i < coms.length; i++) {
@@ -49,7 +50,7 @@
             MiWebService.ObtenerComentarios(idLibro_comentario, callbackObtenerComentarios);
         };
         
-            setTimeout(ObtenerComentarios, 100);
+            setTimeout(ObtenerComentarios, 200);
 
         });
 
