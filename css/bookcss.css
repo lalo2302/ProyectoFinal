@@ -30,9 +30,9 @@ nav.menu {
     z-index: 99;
 }
 
-    nav.menu .logo {
-        float: left;
-    }
+nav.menu .logo {
+    float: left;
+}
 
 nav.menu .logo a {
     color: #aeaeae;
