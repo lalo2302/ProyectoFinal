@@ -1,13 +1,13 @@
 ﻿.mostrar_comentarios{
-    position: relative; 
-    height: 80px; 
-    width: 100%; 
-    padding-top: 10px;
-    padding-left: 10px; 
     background-color: #F9F9F9;
     border-top: 14px solid #FFD116; 
-    overflow: auto;
+    height: 80px; 
     margin-bottom: 5px;
+    overflow: auto;
+    padding-left: 10px; 
+    padding-top: 10px;
+    position: relative; 
+    width: 100%; 
 }
 
 .cover{

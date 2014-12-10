@@ -3,11 +3,11 @@
     src: url("../fonts/Raleway-Light.ttf");
 }
 body{
+    -webkit-user-select: none;
     background: #ecf0f1;
     color: #757575;
     font-family: "Raleway" !important;
     font-size: 13px;
-    -webkit-user-select: none;
 }
 .mt-100{
     margin-top: 20%;
@@ -37,8 +37,8 @@ nav.menu .right{
 }
 nav.menu .right a{
     color: #aeaeae;
-    font-size: 14px;
     display: inline-block;
+    font-size: 14px;
     padding: 10px;
     text-decoration: none;
 }
@@ -50,8 +50,8 @@ nav.menu .right a{
     padding: 5px;
 }
 #home{
-    background: url("../img/books.jpg");
     background-size: cover;
+    background: url("../img/books.jpg");
     height: 100vh;
     width: 100%;
 }
@@ -80,8 +80,8 @@ nav.menu .right a{
 }
 .book{
     cursor: pointer;
-    overflow: hidden;
     display:inline;
+    overflow: hidden;
 }
 #all{
     height: 100vh;
@@ -104,14 +104,14 @@ nav.menu .right a{
     text-decoration: none;
 }
 #book{
+    -moz-transition: all .3s ease;
+    -webkit-transition: all .3s ease;
     background: #ecf0f1;
     height: 100%;
     left: -100%;
     position: fixed;
     top: 70px;
     transition: all .3s ease;
-    -moz-transition: all .3s ease;
-    -webkit-transition: all .3s ease;
     width: 100%;
 }
 #book .close{
@@ -125,8 +125,8 @@ nav.menu .right a{
     font-size: 20px;
 }
 .right ul li{
-    list-style: none;
     display: inline-block;
+    list-style: none;
 }
 .nav{
     margin-top: 5px !important;
