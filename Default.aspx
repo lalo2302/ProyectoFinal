@@ -71,7 +71,7 @@
         <div id="home">
             <div class="col-sm-6 col-sm-offset-3 mt-100">
                 <div class="title">
-                    "God is in the code, and the code is in the books"
+                    <p>God is in the code</p><p>and the code is in the books</p>
                 </div>
             </div>
         </div>

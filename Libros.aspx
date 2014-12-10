@@ -170,6 +170,7 @@
                 <b>Comentarios:</b>
                 <div class="com_sec">
                 </div>
+                
             </div>
         </div>
     </div>

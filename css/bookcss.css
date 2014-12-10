@@ -2,21 +2,25 @@
     font-family: "Raleway";
     src: url("../fonts/Raleway-Light.ttf");
 }
+
 @font-face {
     font-family: "Baskerville";
     src: url("../fonts/Baskerville.ttc");
 }
-body{
+
+body {
+    -webkit-user-select: none;
     background: #ecf0f1;
     color: #757575;
     font-family: "Raleway" !important;
     font-size: 13px;
-    -webkit-user-select: none;
 }
-.mt-100{
+
+.mt-100 {
     margin-top: 20%;
 }
-nav.menu{
+
+nav.menu {
     background: rgba(0,0,0,0.8);
     left: 0;
     padding: 10px;
@@ -25,10 +29,12 @@ nav.menu{
     width: 100%;
     z-index: 99;
 }
-nav.menu .logo{
-    float: left;
-}
-nav.menu .logo a{
+
+    nav.menu .logo {
+        float: left;
+    }
+
+nav.menu .logo a {
     color: #aeaeae;
     display: block;
     font-size: 18px;
@@ -36,75 +42,89 @@ nav.menu .logo a{
     text-decoration: none;
     text-transform: uppercase;
 }
-nav.menu .right{
+
+nav.menu .right {
     float: right;
 }
-nav.menu .right a{
+
+nav.menu .right a {
     color: #aeaeae;
-    font-size: 14px;
     display: inline-block;
+    font-size: 14px;
     padding: 10px;
     text-decoration: none;
 }
-.search-form{
+
+.search-form {
     background: transparent;
     border: 0;
     color: #aeaeae;
     outline: none;
     padding: 5px;
 }
-.high{
-    font-size: 20px;!important;
+
+.high {
+    font-size: 20px !important;
 }
-.right ul li{
-    list-style: none;
+
+.right ul li {
     display: inline-block;
+    list-style: none;
 }
-.nav{
+
+.nav {
     margin-top: 5px !important;
 }
-.nav a{
+
+.nav a {
     background: transparent !important;
 }
 
-.nav a:hover{
+.nav a:hover {
     color: #ffffff !important;
 }
-.dropdown-menu{
-    background: rgba(0,0,0,0.8)!important;
+
+.dropdown-menu {
+    background: rgba(0,0,0,0.8) !important;
     margin-top: 15px !important;
 }
-hr{
+
+hr {
     border-color: #dddddd;
     margin-top: -10px !important;
 }
 
-.content{
+.content {
     margin-top: 73px;
 }
-.contenido{
+
+.contenido {
     text-align: justify;
     text-justify: inter-word;
 }
+
 #comment_button {
-    position: fixed;
     bottom: 0;
+    height: 33px;
     left: 360px;
-    z-index: 54;
     opacity: 0.4;
+    position: fixed;
+    z-index: 54;
 }
-#comment_button:hover{
+
+#comment_button:hover {
     opacity: 1;
 }
-textarea{
+
+textarea {
     background: rgba(0,0,0,0.5);
-    border: 1px solid #ccc;
-    height:64px;
-    position: fixed;
     bottom: 0;
+    height: 33px;
+    position: fixed;
     width: 400px;
     z-index: 52;
 }
-textarea:focus{
+
+textarea:focus {
     color: #fff;
 }
