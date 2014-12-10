@@ -50,8 +50,9 @@ nav.menu .right a{
     padding: 5px;
 }
 #home{
-    background-size: cover;
+  
     background: url("../img/books.jpg");
+    background-size: cover;
     height: 100vh;
     width: 100%;
 }
