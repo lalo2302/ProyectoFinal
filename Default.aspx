@@ -88,7 +88,7 @@
                         <a href="Libros.aspx">
                         <img src="covers/451.jpg" WIDTH="100%"/>
                         <h4 class="high">Fahrenheit 451 - Ray Bradbury</h4>
-                        <span>Carlos Rodriguez</span>
+                        <span>Carlos Rodríguez</span>
                         </a>
                     </div>
                     <div class="col-sm-4 text-center rec" id="5">
