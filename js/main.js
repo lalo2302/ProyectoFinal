@@ -27,7 +27,7 @@ function ObtenerLibroscallback(msg) {
         }
 
     }
-    //Insertar Generos
+    //Insertar Generos en menu desplegable
     for (var k = 0; k < Generos.length; k++) {
         $("#listaGeneros").append(' <li class="genero"> <a>' + Generos[k] + '</a> </li>');
     }
