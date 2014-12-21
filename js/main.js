@@ -100,4 +100,13 @@ $(document).ready(function () {
 
 
     });
+
+    ////hover para la info de los libros
+    //$(".cuadroLibro").hover(function () {
+    //    $("#5").hide();
+    //},
+    //function () {
+    //    $("#5").show();
+    //}
+    //);
 });

@@ -17,7 +17,14 @@
             function ObtenerLibros() {
                 MiWebService.ObtenerLibros(ObtenerLibroscallback);
             };
-            ObtenerLibros();
+            $.when(ObtenerLibros()).done($(".book").hover(
+               function () {
+                   alert("fucniona");
+               }
+                ));
+
+            //hover para la info de los libros
+            
         });
         
     </script>
@@ -93,7 +100,7 @@
                     </div>
                     <div class="col-sm-4 text-center rec" id="5">
                         <a href="Libros.aspx">
-                        <img src="covers/gatsby.jpg" WIDTH="100%"/>
+                        <img  src="covers/gatsby.jpg" WIDTH="100%"/>
                         <h4 class="high">The Great Gatsby - F. Scott Fitzgerald</h4>
                         <span>Jorge Vázquez Mellado</span>
                         </a>
