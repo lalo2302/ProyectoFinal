@@ -4,7 +4,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Haquers - Proyecto Final</title>
+    <link rel="shortcut icon" href="img/faviconBlanco.ico"/>
+    <link rel="stylesheet" href="css/css.css"/>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/ionicons.min.css"/>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -27,32 +33,27 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="#home" class="scroll">Inicio</a>
+                            <a href="http://localhost/ProyectoFinal/Default.aspx#home">Inicio</a>
                         </li>
                         <li>
-                            <a href="#featured" class="scroll">Recomendados</a>
+                            <a href="http://localhost/ProyectoFinal/Default.aspx#featured">Recomendados</a>
                         </li>
                         <li>
-                            <a href="#all" class="scroll">Todos</a>
+                            <a href="http://localhost/ProyectoFinal/Default.aspx#all">Todos</a>
                         </li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle scroll" data-toggle="dropdown">
-                        Géneros
-                    </a>
-                    <ul class="dropdown-menu" role="menu" id="listaGeneros">
-                        
                     </ul>
                 </li>
             </ul>
             <a id="show-search">
-                <input id="cuadroBusqueda" type="text" class="search-form" placeholder="Buscar"/>
+                <input type="text" id="cuadroBusqueda" class="search-form" placeholder="Buscar" onkeydown="return processKey(event)"/>
+                <input type="submit" value="Save Earth" style="display: none"/>
                 <i class="ion-search"></i>
             </a>
         </div>
     </nav>
+
     </div>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     </form>
 </body>
 </html>
