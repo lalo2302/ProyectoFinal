@@ -123,8 +123,12 @@
 
                 <div class="col-sm-10 col-sm-offset-1 all">
                 </div>
+                <div class="col-sm-12" id="agregarLibro">
+                    <a href="InsertarLibro.aspx" class="btn btn-default btn-lg" role="button">Agregar Libro</a>
+                </div>
             </div>
         </div>
+        
 
 
     </div>        

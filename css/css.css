@@ -161,3 +161,7 @@ hr{
 .separacion {
     margin: 0 0 30px 0;
 }
+
+#agregarLibro{
+    text-align:center
+}
